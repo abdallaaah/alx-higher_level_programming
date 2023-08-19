@@ -11,7 +11,7 @@
  */
 listint_t *insert_node(listint_t **head, int number)
 {
-listint_t *new, *current, *current2, listint_t *temp;
+listint_t *new, *current, *current2, *temp;
 current = *head;
 while (current->next != NULL)
 {
