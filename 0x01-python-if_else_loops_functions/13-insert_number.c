@@ -45,5 +45,12 @@ return (NULL);
 new->n = number;
 current->next = new;
 }
+if (head == NULL)
+{
+new = malloc(sizeof(listint_t));
+new->n = number;
+new->next = NULL;
+*head = new;
+}
 return (new);
 }
