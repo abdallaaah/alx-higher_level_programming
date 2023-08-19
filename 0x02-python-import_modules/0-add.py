@@ -1,9 +1,7 @@
 #!/usr/bin/python3
-
-if __name__ == "__main__":
-    """Print the sum of 1 and 2."""
+if __name__ == '__main__':
     from add_0 import add
-
-    a = 1
-    b = 2
-    print("{} + {} = {}".format(a, b, add(a, b)))
+    a = 1;
+    b = 2;
+    res = add(1,2)
+    print(f"{a} + {b} = {res}")
