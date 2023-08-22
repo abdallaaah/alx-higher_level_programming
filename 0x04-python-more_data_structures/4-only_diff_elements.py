@@ -1,4 +1,4 @@
-#!/bin/usr/python3
+#!/usr/bin/python3
 def only_diff_elements(set_1, set_2):
     set_11 = list(set_1)
     set_22 = list(set_2)
