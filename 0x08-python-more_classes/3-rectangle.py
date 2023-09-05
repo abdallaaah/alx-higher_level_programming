@@ -50,6 +50,7 @@ class Rectangle:
             return (self.width + self.height) * 2
 
     def __str__(self):
+        """Return the printable representation of the Rectangle."""
         rect = []
         if self.width == 0 or self.height == 0:
             return ""
