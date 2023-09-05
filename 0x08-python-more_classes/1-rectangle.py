@@ -1,8 +1,10 @@
 #!/usr/bin/python3
-""" real rectangle class """
+"""real rectangle class """
 
 
 class Rectangle:
+    """ class represent the rectange"""
+
     def __init__(self, width=0, height=0):
         """ Create a new rectangel
         Args:
