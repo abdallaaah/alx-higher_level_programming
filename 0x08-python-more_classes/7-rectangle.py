@@ -64,9 +64,7 @@ class Rectangle:
                 rect.append(self.print_symbol)
             if not i == self.height - 1:
                 rect.append("\n")
-        #print(rect)
-        #return ''.join(rect)
-        return ''.join(str(l) for l in rect)
+        return ''.join(str(z) for z in rect)
 
     def __repr__(self):
         """Return the string representation of the Rectangle."""
