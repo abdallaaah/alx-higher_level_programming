@@ -91,3 +91,8 @@ class Rectangle:
         """ print message in deleting """
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
+
+    @classmethod
+    def square(cls, size=0):
+        new_rect = Rectangle(size, size)
+        return new_rect
