@@ -38,4 +38,3 @@ TypeError: b must be an integer
 >>> add_integer(5, 3.6)
 8
 
-
