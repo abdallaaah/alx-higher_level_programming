@@ -1,12 +1,12 @@
-#!/usr/bin/python3 
-""" Rectangel class inherit from base"""
+#!/usr/bin/python3
+"""Rectangle class inherit from base"""
 from models.base import Base
 
-class Rectangle(Base):
-    """ inherit from base"""
-    
-    def __init__(self, width, height, x=0, y=0, id=None):
 
+class Rectangle(Base):
+    """Inherit from base"""
+
+    def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
         self.width = width
         self.height = height
@@ -16,10 +16,10 @@ class Rectangle(Base):
     @property
     def width(self):
         return self.__width
-    
+
     @width.setter
     def width(self, value):
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
         elif value <= 0:
             raise ValueError("width must be > 0")
@@ -29,10 +29,10 @@ class Rectangle(Base):
     @property
     def height(self):
         return self.__height
-            
+
     @height.setter
     def height(self, value):
-        if not type(value) == int:
+        if not isinstance(value, int):
             raise TypeError("height must be an integer")
         elif value <= 0:
             raise ValueError("height must be > 0")
@@ -45,7 +45,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
-        if not type(value) == int:
+        if not isinstance(value, int):
             raise TypeError("x must be an integer")
         elif value < 0:
             raise ValueError("x must be >= 0")
@@ -58,7 +58,7 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        if not type(value) == int:
+        if not isinstance(value, int):
             raise TypeError("y must be an integer")
         elif value < 0:
             raise ValueError("y must be >= 0")
@@ -66,18 +66,17 @@ class Rectangle(Base):
             self.__y = value
 
     def area(self):
-        """ return the area of rectangele"""
-
+        """Return the area of rectangle"""
         return self.height * self.width
 
     def display(self):
-        """display the rectangle"""
-        for x in range(self.height):
-            for y in range(self.width):
-                print("#",end="")
-            print("")
+        """Display the rectangle"""
+        for _ in range(self.height):
+            for _ in range(self.width):
+                print("#", end="")
+            print()
 
     def __str__(self):
-        """ print the str"""
-
-        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height))
+        """Print the str"""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.x, self.y, self.width, self.height)
