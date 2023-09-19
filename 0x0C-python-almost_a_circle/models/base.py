@@ -2,7 +2,7 @@
 """ 0x0C. Python - Almost a circle"""
 import json
 import csv
-import turtle
+
 
 class Base:
     """ base class of all coming"""
@@ -42,7 +42,7 @@ class Base:
                 list_dicts = [o.to_dictionary() for o in list_objs]
                 jsonfile.write(Base.to_json_string(list_dicts))
 
-        @staticmethod
+    @staticmethod
     def from_json_string(json_string):
         """Return the deserialization of a JSON string.
 
@@ -89,13 +89,8 @@ class Base:
         except IOError:
             return []
 
-    @classmethod
+    """@classmethod
     def save_to_file_csv(cls, list_objs):
-        """Write the CSV serialization of a list of objects to a file.
-
-        Args:
-            list_objs (list): A list of inherited Base instances.
-        """
         filename = cls.__name__ + ".csv"
         with open(filename, "w", newline="") as csvfile:
             if list_objs is None or list_objs == []:
@@ -107,4 +102,4 @@ class Base:
                     fieldnames = ["id", "size", "x", "y"]
                 writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
                 for obj in list_objs:
-                    writer.writerow(obj.to_dictionary())
+                    writer.writerow(obj.to_dictionary())"""
