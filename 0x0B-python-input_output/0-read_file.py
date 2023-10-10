@@ -5,5 +5,5 @@
 def read_file(filename=""):
     """ function to read from file and print"""
     with open("my_file_0.txt", 'r', encoding="utf-8") as f:
-        file = f.read()
-        print(file, end='')
+        text = f.read()
+        print(text)
