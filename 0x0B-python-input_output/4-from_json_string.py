@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-# 6-from_json_string.py
-"""Defines a JSON-to-object function."""
+""" the inverse of the json from json to object """
 import json
 
 
 def from_json_string(my_str):
-    """Return the Python object representation of a JSON string."""
+    """ using load to reverse the json"""
     return json.loads(my_str)
