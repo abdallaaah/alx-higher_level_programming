@@ -1,2 +1,2 @@
 -- show all rows of database
-SELECT * FROM first_table;
+SELECT * FROM second_table;
