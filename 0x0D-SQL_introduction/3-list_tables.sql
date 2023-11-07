@@ -1,2 +1,2 @@
--- list all databases form what i will gove you
+-- Write a script that lists all the tables of a database in your MySQL server.
 SHOW TABLES;
