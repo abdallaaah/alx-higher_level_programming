@@ -5,7 +5,10 @@ if (len === 3) {
   console.log(0);
 } else if (len === 2) {
   console.log(0);
-} else {
+} else if (parseInt(process.argv[3] == 1)) {
+console.log(0);
+}
+else {
   let max = -999;
   let max2 = -9999;
   let num = 0;
