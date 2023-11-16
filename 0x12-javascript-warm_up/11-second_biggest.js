@@ -1,8 +1,8 @@
 #!/usr/bin/node
 
 const len = process.argv.length;
-if (len === 1) {
-  console.log('hello');
+if (len === 3) {
+  console.log(0);
 } else if (len === 2) {
   console.log(0);
 } else {
