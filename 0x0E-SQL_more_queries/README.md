@@ -1,1 +1,1 @@
-more quires with again more learning
+more quires with again more learning ro SQL 
