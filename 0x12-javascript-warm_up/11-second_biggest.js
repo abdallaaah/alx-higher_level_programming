@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-if (process.argv.length < 4) {
+if (process.argv.length < 4 || process.argv[3] === 1) {
   console.log(0);
 } else {
   const num = [];
