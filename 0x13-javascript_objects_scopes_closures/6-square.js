@@ -14,7 +14,7 @@ class Square extends square {
         if (!c) {
           z += ('X');
         } else {
-          z += ('C');
+          z += (c);
         }
       }
       console.log(z);
