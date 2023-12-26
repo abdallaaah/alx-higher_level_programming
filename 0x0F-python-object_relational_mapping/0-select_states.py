@@ -1,10 +1,7 @@
 #!/usr/bin/python3
+"""list all states"""
 import MySQLdb
 import sys
-import sqlalchemy
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import create_engine, select, MetaData
-from sqlalchemy.orm import Session
 
 def main(argv):
     """the main to create connection"""
@@ -22,6 +19,8 @@ def main(argv):
     qury_rows = cur.fetchall()
     for row in qury_rows:
         print(row)
+    cur.close
+    conn.close
 
 if __name__ == "__main__":
     """this main make the code excuted when excute not import"""
