@@ -24,4 +24,5 @@ def main(argv):
         print(row)
 
 if __name__ == "__main__":
+    """this main make the code excuted when excute not import"""
     main(sys.argv)
