@@ -3,6 +3,7 @@
 import MySQLdb
 import sys
 
+
 def main(argv):
     """the main to create connection"""
     connection_string = {
@@ -21,6 +22,7 @@ def main(argv):
         print(row)
     cur.close
     conn.close
+
 
 if __name__ == "__main__":
     """this main make the code excuted when excute not import"""
