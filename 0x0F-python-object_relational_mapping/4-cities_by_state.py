@@ -16,7 +16,11 @@ if __name__ == "__main__":
             }
     con = MySQLdb.connect(**connection_string)
     cur = con.cursor()
-    command = "SELECT c.state_id,c.name,s.name FROM states AS s join cities AS c ON c.state_id = s.id ORDER BY c.id ASC"
+    command = (
+            "SELECT c.state_id,c.name,s.name FROM states AS s "
+            "JOIN cities AS c ON c.state_id = s.id "
+            "ORDER BY c.id ASC "
+            )
     cur.execute(command)
     result = cur.fetchall()
     for row in result:
