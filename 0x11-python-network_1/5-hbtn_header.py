@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """
-Python script that fetches an URL with requests package
-"""
-import requests
+Sends a request to the URL and displays the value of the variable X-Request-Id
+in the response header"""
 
+if __name__ == '__main__':
+    from requests import get
+    from sys import argv
 
-if __name__ == "__main__":
-    r = requests.get('https://alx-intranet.hbtn.io/status')
-    t = r.text
-    print('Body response:\n\t- type: {}\n\t- content: {}'.format(type(t), t))
+    res = get(argv[1])
+    print(res.headers.get('X-Request-Id'))
