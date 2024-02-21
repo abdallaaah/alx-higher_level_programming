@@ -19,6 +19,7 @@ class Square:
     @size.setter
     def size(self, size):
         """set the size with setter for the first time and every time"""
+
         if int(size) < 0:
             raise ValueError('size must be >= 0')
 
