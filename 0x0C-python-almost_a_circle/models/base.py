@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """OOP is traning for this module"""
 
+
 class Base:
     """This is the base class"""
 
@@ -14,4 +15,3 @@ class Base:
         else:
             self.id = Base.__nb_objects
             Base.__nb_objects += 1
-
