@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-from . import base
 """learn how ton inerit"""
+from . import base
 
 
 class Rectangle(base.Base):
