@@ -1,4 +1,7 @@
-from . import  rectangle
+#!/usr/bin/python3
+"""square inherit from rectangle"""
+from . import rectangle
+
 
 class Square(rectangle.Rectangle):
     """square class that inherit from rectangle"""
@@ -9,6 +12,3 @@ class Square(rectangle.Rectangle):
     def __str__(self):
         """return the human redabile"""
         return f"[Square] {self.id} {self.x}/{self.y} - {self.size}"
-
-
-
