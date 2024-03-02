@@ -11,4 +11,4 @@ class Square(rectangle.Rectangle):
 
     def __str__(self):
         """return the human redabile"""
-        return f"[Square] {self.id} {self.x}/{self.y} - {self.size}"
+        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
