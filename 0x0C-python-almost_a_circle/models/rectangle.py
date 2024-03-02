@@ -85,13 +85,12 @@ class Rectangle(base.Base):
         return self.__width * self.__height
 
     def display(self):
-        """return the display function of rectangle"""
-
-        for x in range(0, self.__height):
-            for y in range(0, self.__width):
-                print('#', end='')
-            print('')
-
+        """Print the Rectangle instance with the character '#'."""
+        for _ in range(self.__y):
+            print()
+        for _ in range(self.__height):
+            print(' ' * self.__x, end='')
+            print('#' * self.__width)
     def __str__(self):
         """return the string represntaion"""
 
