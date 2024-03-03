@@ -30,7 +30,7 @@ class Base:
     def save_to_file(cls, list_objs):
         """save dict to file"""
 
-        if list_objs is None or not list_objs:
+        if list_objs is None:
             list_objs = []
         filename = cls.__name__ + '.json'
         for obj in list_objs:
