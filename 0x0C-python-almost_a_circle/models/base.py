@@ -40,7 +40,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """from json to dictitonary"""
+        """from json to dictitonary return string of dictsss"""
         json_list = []
         if json_string is None:
             return []
@@ -54,8 +54,31 @@ class Base:
             rectangle_dummy = rectangle.Rectangle(10, 10)
             rectangle_dummy.update(**dictionary)
             return rectangle_dummy
-        else:
+        elif cls.__name__ == 'Square':
             from . import square
             square_dummy = square.Square(10)
             square_dummy.update(**dictionary)
             return square_dummy
+
+    @classmethod
+    def load_from_file(cls):
+        instances = []
+        if cls.__name__ == 'Rectangle':
+            with open('Rectangle.json', 'r') as f:
+                data = f.read()
+                if data:
+                    objects_data = cls.from_json_string(data)
+                    for obj_data in objects_data:
+                        instance = cls.create(**obj_data)
+                        instances.append(instance)
+            return instances
+
+        elif cls.__name__ == 'Square':
+            with open('Square.json', 'r') as f:
+                data = f.read()
+                if data:
+                    objects_data = cls.from_json_string(data)
+                    for obj_data in objects_data:
+                        instance = cls.create(**obj_data)
+                        instances.append(instance)
+            return instances
