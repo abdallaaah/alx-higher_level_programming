@@ -122,3 +122,15 @@ class Rectangle(base.Base):
                 self.__width = kwargs.get('width')
             if 'height' in kwargs:
                 self.__height = kwargs.get('height')
+
+    def to_dictionary(self):
+        """dicitionry represntaion"""
+
+        dict = {
+            'x': self.x,
+            'y': self.y,
+            'id': self.id,
+            'height': self.height,
+            'width': self.width
+        }
+        return dict
