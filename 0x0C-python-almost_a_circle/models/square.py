@@ -47,3 +47,14 @@ class Square(rectangle.Rectangle):
                 self.x = kwargs.get('x')
             if 'y' in kwargs:
                 self.y = kwargs.get('y')
+
+    def to_dictionary(self):
+        """dicitionry represntaion"""
+
+        dict = {
+            'id': self.id,
+            'size': self.width,
+            'x': self.x,
+            'y': self.y,
+        }
+        return dict
