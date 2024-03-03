@@ -6,7 +6,7 @@ from . import rectangle
 class Square(rectangle.Rectangle):
     """square class that inherit from rectangle"""
     def __init__(self, size, x=0, y=0, id=None):
-        super().__init__(size, size, x, y, id=id)
+        super().__init__(size, size, x, y, id)
 
     def __str__(self):
         """return the human redabile"""
@@ -16,7 +16,7 @@ class Square(rectangle.Rectangle):
     def size(self):
         """return size"""
 
-        return self.__size
+        return self.height
 
     @size.setter
     def size(self, size):
