@@ -54,7 +54,7 @@ class Base:
             rectangle_dummy = rectangle.Rectangle(10, 10)
             rectangle_dummy.update(**dictionary)
             return rectangle_dummy
-        elif cls.__name__ == 'Square':
+        else:
             from . import square
             square_dummy = square.Square(10)
             square_dummy.update(dictionary)
