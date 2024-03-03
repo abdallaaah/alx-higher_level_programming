@@ -57,5 +57,5 @@ class Base:
         else:
             from . import square
             square_dummy = square.Square(10)
-            square_dummy.update(dictionary)
+            square_dummy.update(**dictionary)
             return square_dummy
