@@ -19,7 +19,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """return the str represntaion"""
+        """return the json str represntaion"""
 
         if not list_dictionaries:
             return "[]"
@@ -29,11 +29,11 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """save dict to file"""
-        json_string = ""
+        json_string = []
+        filename = cls.__name__ + '.json'
         if list_objs is None:
             list_objs = []
-        filename = cls.__name__ + '.json'
         for obj in list_objs:
-            json_string = cls.to_json_string(obj.to_dictionary())
+            json_string.append(obj.to_dictionary())
         with open(filename, 'w') as f:
-            f.write(json_string)
+            f.write(cls.to_json_string(json_string))
