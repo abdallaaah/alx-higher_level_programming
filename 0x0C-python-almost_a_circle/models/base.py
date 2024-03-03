@@ -29,7 +29,7 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """save dict to file"""
-
+        json_string = ""
         if list_objs is None:
             list_objs = []
         filename = cls.__name__ + '.json'
