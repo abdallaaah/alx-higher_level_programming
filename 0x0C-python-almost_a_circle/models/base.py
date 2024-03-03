@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """OOP is traning for this module"""
 import json
+import os
 
 
 class Base:
@@ -62,23 +63,21 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        instances = []
-        if cls.__name__ == 'Rectangle':
-            with open('Rectangle.json', 'r') as f:
-                data = f.read()
-                if data:
-                    objects_data = cls.from_json_string(data)
-                    for obj_data in objects_data:
-                        instance = cls.create(**obj_data)
-                        instances.append(instance)
-            return instances
+        """Load objects from a file and return a list of instances"""
 
-        elif cls.__name__ == 'Square':
-            with open('Square.json', 'r') as f:
+        instances = []
+
+        filename = cls.__name__ + '.json'
+
+        if os.path.exists(filename):
+            with open(filename, 'r') as f:
                 data = f.read()
                 if data:
                     objects_data = cls.from_json_string(data)
                     for obj_data in objects_data:
                         instance = cls.create(**obj_data)
                         instances.append(instance)
-            return instances
+        else:
+            return []
+
+        return instances
