@@ -40,8 +40,22 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """from json to dictitonary"""
         json_list = []
         if json_string is None:
             return []
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        if cls.__name__ == 'Rectangle':
+            from . import rectangle
+            rectangle_dummy = rectangle.Rectangle(10, 10)
+            rectangle_dummy.update(**dictionary)
+            return rectangle_dummy
+        elif cls.__name__ == 'Square':
+            from . import square
+            square_dummy = square.Square(10)
+            square_dummy.update(dictionary)
+            return square_dummy
