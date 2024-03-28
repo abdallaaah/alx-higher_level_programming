@@ -1,24 +1,24 @@
 #!/usr/bin/node
+// this is how to count char movies with web scraping
 
 const request = require('request');
-const starWarsUri = process.argv[2];
-let times = 0;
-
-request(starWarsUri, function (_err, _res, body) {
-  body = JSON.parse(body).results;
-
-  for (let i = 0; i < body.length; ++i) {
-    const characters = body[i].characters;
-
-    for (let j = 0; j < characters.length; ++j) {
-      const character = characters[j];
-      const characterId = character.split('/')[5];
-
-      if (characterId === '18') {
-        times += 1;
+ const url = process.argv[2]
+request(url, function (error, response, body) {
+  if (error) {
+    console.log(error);
+    return;
+  }
+  const filmdata = JSON.parse(body).results;
+  let number = 0;
+  for (let i = 0; i < filmdata.length; i++) {
+    const charctersList = filmdata[i].characters;
+    for (let x = 0; x < charctersList.length; x++) {
+      const id = charctersList[x].split('/')[5];
+      if (id === '18') {
+        number++;
       }
     }
   }
-
-  console.log(times);
-});
+  console.log(number);
+}
+);
