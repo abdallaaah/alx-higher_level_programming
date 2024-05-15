@@ -1,13 +1,16 @@
 #!/usr/bin/node
-// this is comment
 
-// console.log(process.argv[2]);
-const fs = require('node:fs');
+let fs = require('fs')
 
-fs.readFile(process.argv[2], 'utf8', (err, data) => {
-  if (err) {
-    console.error(err);
-    return;
-  }
-  console.log(data);
-});
+fs.readFile('my_file.txt', 'utf-8', function(err, data){
+    try{
+        if(data){
+            console.log(data)
+            }
+        }
+        catch(err){
+            print(err)
+        }
+    
+
+})
