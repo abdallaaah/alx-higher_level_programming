@@ -1,16 +1,11 @@
 #!/usr/bin/node
 
-let fs = require('fs')
+const fs = require('fs');
 
-fs.readFile('my_file.txt', 'utf-8', function(err, data){
-    try{
-        if(data){
-            console.log(data)
-            }
-        }
-        catch(err){
-            print(err)
-        }
-    
-
-})
+fs.readFile('my_file.txt', 'utf-8', function (errr, data) {
+  if (errr) {
+    console.log(errr);
+    return;
+  }
+  console.log(data);
+});
