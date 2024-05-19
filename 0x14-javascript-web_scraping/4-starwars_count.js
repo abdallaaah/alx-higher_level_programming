@@ -9,7 +9,6 @@ request(url, function (error, response, body) {
     return;
   }
   const filmdata = JSON.parse(body).results;
-  console.log(filmdata);
   let number = 0;
   for (let i = 0; i < filmdata.length; i++) {
     const charctersList = filmdata[i].characters;
