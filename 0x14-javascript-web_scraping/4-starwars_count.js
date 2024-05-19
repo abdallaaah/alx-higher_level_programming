@@ -1,37 +1,25 @@
 #!/usr/bin/node
-let WedgeAntillesUrl = '';
+// this is how to count char movies with web scraping
+
 const request = require('request');
-const request2 = require('request');
-const url = process.argv[2];
-
-function MakeAnotherReq (url) {
-  request2(url, (error, response, body) => {
-    if (error) {
-      console.log(error);
-    }
-    const x = JSON.parse(body).films.length;
-    console.log(x);
-  });
-}
-
-request(url, (error, response, body) => {
+ const url = process.argv[2]
+request(url, function (error, response, body) {
   if (error) {
     console.log(error);
+    return;
   }
-  const dict = JSON.parse(body);
-  const character = dict.results[0].characters;
-  for (let i = 0; i < character.length; i++) {
-    const parts = character[i].split('/');
-    if (parts[5] === '18') {
-      WedgeAntillesUrl = (character[i]);
+  const filmdata = JSON.parse(body).results;
+  console.log(filmdata)
+  let number = 0;
+  for (let i = 0; i < filmdata.length; i++) {
+    const charctersList = filmdata[i].characters;
+    for (let x = 0; x < charctersList.length; x++) {
+      const id = charctersList[x].split('/')[5];
+      if (id === '18') {
+        number++;
+      }
     }
   }
-  MakeAnotherReq(WedgeAntillesUrl);
-});
-// request(wedge_antilles_url, (error, response, body) => {
-//  if (error) {
-//     console.log(error)
-// }
-// console.log(body)
-
-// })
+  console.log(number);
+}
+);
