@@ -20,7 +20,10 @@ request(url, function (error, response, body) {
         count++;
       }
     }
-    dict[x] = count;
+    if (count != 0){
+      dict[x] = count;
+    }
+    
   }
   console.log(dict);
 });
