@@ -1,31 +1,27 @@
 #!/usr/bin/node
-// count user completed task
 const request = require('request');
 const url = process.argv[2];
+
 request(url, function (error, response, body) {
   if (error) {
-    console.log(error);
+    return console.log(error);
   }
-  const object = JSON.parse(body);
-  let count = 0;
-  let userid = 0;
-  const dict = {};
-  for (let y = 0; y < object.length; y++) {
-    userid = object[y]['userId']
-  }
-  for (let x = 1; x <= userid; x++) {
-    count = 0;
-    for (let y = 0; y < object.length; y++) {
-      if (object[y].userId === x && object[y]['completed']) {
-        count++;
+
+  try {
+    const tasks = JSON.parse(body);
+    const userTaskCount = {};
+
+    tasks.forEach(task => {
+      if (task.completed) {
+        if (!userTaskCount[task.userId]) {
+          userTaskCount[task.userId] = 0;
+        }
+        userTaskCount[task.userId]++;
       }
-    }
-    if (count != 0){
-      dict[x] = count;
-    }
-    
-  }
-  if (dict != {}){
-  console.log(dict);
+    });
+
+    console.log(userTaskCount);
+  } catch (err) {
+    console.log('Error parsing JSON:', err);
   }
 });
