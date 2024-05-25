@@ -1,0 +1,22 @@
+#!/usr/bin/node
+const request = require('request');
+const url = process.argv[2];
+request(url, function (error, response, body) {
+  if (error) {
+    console.log(error);
+  }
+  const object = JSON.parse(body);
+  let count = 0;
+  const userid = 10;
+  const dict = {};
+  for (let x = 1; x <= userid; x++) {
+    count = 0;
+    for (let y = 0; y < object.length; y++) {
+      if (object[y].userId === x && object[y].completed) {
+        count++;
+      }
+    }
+    dict[x] = count;
+  }
+  console.log(dict);
+});
