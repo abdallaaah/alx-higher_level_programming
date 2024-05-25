@@ -16,7 +16,7 @@ request(url, function (error, response, body) {
   for (let x = 1; x <= userid; x++) {
     count = 0;
     for (let y = 0; y < object.length; y++) {
-      if (object[y].userId === x && object[y].completed) {
+      if (object[y].userId === x && object[y]['completed']) {
         count++;
       }
     }
