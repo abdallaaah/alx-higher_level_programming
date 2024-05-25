@@ -25,5 +25,7 @@ request(url, function (error, response, body) {
     }
     
   }
+  if (dict != {}){
   console.log(dict);
+  }
 });
